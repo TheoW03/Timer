@@ -14,19 +14,9 @@ function time(){
     if(!paused){
         if(i == 60){
             i = 0;
-            mins++;
-        }
-        if(hours == 60){
-            mins = 0;
-            hours++;
         }
         let c = document.getElementById('timer');
-        if(i < 10){
-            c.innerHTML= mins.toString() +":0"+ i.toString();
-        }else{
-            c.innerHTML= mins.toString() +": "+ i.toString();
-        }
-        
+        c.innerHTML= + i.toString();
         clicks=0;
         i++;    
     }else{
