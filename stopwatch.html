@@ -3,11 +3,13 @@
     <head>
        <title>timer</title>
        <script src="Timer.js"></script>
+       <link rel="stylesheet" href="StyleSheet.css">
     </head>
     <body>
-        <div>
-            <button>timer</button>
-            <button>stop watch</button>
+        <div class="navBar">
+            <a href="TimerPage.html"><button onclick="storePage('stopwatch.html')">timer</button></a>
+            <a href="stopwatch.html"><button onclick="storePage('stopwatch.html')">stop watch</button></a>
+            <a href=""><button id="back" onclick="backButton()">back</button></a>
         </div>
         <br>
         <br>

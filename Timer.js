@@ -17,8 +17,7 @@ function time(){
         }
         let c = document.getElementById('timer');
         c.innerHTML= + i.toString();
-        clicks=0;
-        i++;    
+        i++;    //will update
     }else{
         return;
     }
@@ -26,3 +25,15 @@ function time(){
 var id = setInterval(time,100);
 
 
+var storePage=""
+function storePage(page){
+    storePage= page
+}
+function backButton(){
+    let c = document.getElementById("back");
+    c.href=page
+    
+}
+function getHref(){
+    return storePage;
+}
