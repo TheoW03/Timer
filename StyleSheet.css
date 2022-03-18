@@ -1,4 +1,17 @@
 .navBar{
-    background-color: antiquewhite;
-    height: 40px;
+    background-color: blue;
+    height: 60px;
+}
+#divButton{
+    color: white;
+    border: none;
+    background-color: blue;
+    height: 60px;
+    width: 100px;
+    font-weight: bold;
+    font-family: sans-serif;
+
+}
+#divButton:hover{
+    background-color: rgb(14,4,191);
 }
