@@ -39,7 +39,7 @@ function stopWatch(){
         let c = document.getElementById('timer');
 
         c.innerHTML=  mins.toString() +":0" + secs.toString() +":0" + miliSeconds.toString();
-        Lap = mins.toString() +":0" + secs.toString() +":0" + miliSeconds.toString();
+        Lap = mins.toString() +":0" + secs.toString() +":0" + miliSeconds.toString();  //saves lab 
         miliSeconds++;    //will update
     }else{
         return;
