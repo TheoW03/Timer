@@ -57,7 +57,8 @@ function lap(){
     let c = document.getElementById('laps');
     let t = "";
     laps[lapIndex] = Lap;
-    let lapWeb= laps.map(x => x + t + "\n");
+    let i = 0;
+    let lapWeb= laps.map(x => x + t);
     c.innerHTML = lapWeb.toString().split(',').join('<br>');
     lapIndex++;
     stop();

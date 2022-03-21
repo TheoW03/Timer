@@ -1,13 +1,22 @@
-var storePage=""
+var storePages;
+/**
+ * 
+ * @param {*page} page store page in local storage 
+ */
 function storePage(page){
-    storePage= page
+    storePages=page;
+    localStorage.setItem("backPage",page);
 }
-
+/**
+ * retrives for use 
+ */
 function backButton(){
-    let c = document.getElementById("back");
-    c.href=page
+    try{
+        let c = document.getElementById("back");
+        storePages=localStorage.getItem('backPage');
+        c.href = storePages;
+    }catch(error){
+
+    }
     
-}
-function getHref(){
-    return storePage;
 }
