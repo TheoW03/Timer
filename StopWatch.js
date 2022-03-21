@@ -5,6 +5,8 @@ var hours = 0;
 let paused=true;
 var Lap="";
 var pressedLap=false;
+var laps=[];
+var lapIndex = 0;
 
 function start(){
     if(pressedLap){
@@ -45,6 +47,7 @@ function stopWatch(){
         return;
     }
 }
+
 /**
  * this is lap
  * code later
@@ -52,8 +55,11 @@ function stopWatch(){
 var id = setInterval(stopWatch,100);
 function lap(){
     let c = document.getElementById('laps');
-    c.innerHTML = Lap;
-    pressedLap=true;
+    let t = "";
+    laps[lapIndex] = Lap;
+    let lapWeb= laps.map(x => x + t + "\n");
+    c.innerHTML = lapWeb.toString().split(',').join('<br>');
+    lapIndex++;
     stop();
 }
 
