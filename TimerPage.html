@@ -15,18 +15,18 @@
         <div class="timer">
             <p></p>
             <p></p>
-            <p>0:00:00</p>
+            <p id="timerL">00:00:00</p>
             <form>
                 <label> hours</label>
-                <input type="input">
+                <input id = "hours"type="input">
                 <label>minutes</label>
-                <input type="input">
+                <input id="mins" type="input">
                 <label>seconds</label>
-                <input type="input" id="time">
+                <input id="seconds"type="input" id="time">
             </form> 
             <br>
-            <button>save time</button>
-            <button>start time</button>
+            <button onclick="startTimers();"> start time </button>
+            <button onclick="stopT()">stop time</button>
         </div>
   
         
