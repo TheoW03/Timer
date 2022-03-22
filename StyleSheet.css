@@ -15,3 +15,14 @@
 #divButton:hover{
     background-color: rgb(14,4,191);
 }
+.stopsWatchcontainer{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+}
+.timerContainer{
+    position: relative;
+    justify-content: center;
+    text-align: center;    
+}

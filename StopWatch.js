@@ -23,6 +23,7 @@ function start(){
 function stop(){
     paused=true;
 }
+
 /**
  * 
  * @returns returns nothing
@@ -30,6 +31,7 @@ function stop(){
  */
 function stopWatch(){  
     if(!paused){
+        //checks time if needs to be 0
         if(miliSeconds == 10){
             miliSeconds = 0;
             secs++;
@@ -38,11 +40,33 @@ function stopWatch(){
             secs=0;
             mins++;
         }
+        if(mins == 60){
+            mins = 0;
+            hours++;
+        }
+        //string
+        let SecsString = "";
+        if(secs < 10){
+            SecsString += "0";
+        }
+        let minsString = "";
+        if(mins < 10){
+            minsString += "0";
+        }
+        let hoursString = "";
+        if(hours < 10){
+            hoursString += "0";
+        }
+        //adding to Srting
+        hoursString += hours.toString();
+        SecsString += secs.toString();
+        minsString += mins.toString();
+        //implementation on webseite
+        let t =  hoursString + ":"+ minsString + ":" + SecsString +":0"+ miliSeconds.toString();
         let c = document.getElementById('timer');
-
-        c.innerHTML=  mins.toString() +":0" + secs.toString() +":0" + miliSeconds.toString();
-        Lap = mins.toString() +":0" + secs.toString() +":0" + miliSeconds.toString();  //saves lab 
-        miliSeconds++;    //will update
+        c.innerHTML = t;
+        Lap = t; 
+        miliSeconds++;
     }else{
         return;
     }
@@ -63,5 +87,16 @@ function lap(){
     lapIndex++;
     stop();
 }
-
-
+/**
+ * reset event
+ */
+function resetT(){
+    let c = document.getElementById('timer');
+    c.innerHTML="00:00:00:00"
+    miliSeconds=0;
+    secs=0;
+    mins=0;
+    hours=0;
+    pressedLap=false;
+    paused=true;
+}

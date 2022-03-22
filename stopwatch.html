@@ -15,14 +15,16 @@
         <br>
         <br>
         <!-- this is the stop watch -->
-        <div class ="stop watch container">
-            
-            <p id="timer">00:00:00:00</p>
-            <button onclick="start()">start</button>
-            <button  onclick="stop()">stop</button>
-            <button onclick="lap()">lap</button>
+        <div class ="stopsWatchcontainer">
+            <div class="timerContainer">
+                <p id="timer">00:00:00:00</p>
+            </div>
+            <button id="starts"   onclick="start()">start</button>
+            <button  id = "stops" onclick="stop()">stop</button>
+            <button id = "Laps"   onclick="lap()">lap</button>
+            <button id="reset" onclick="resetT()">reset</button>
             <br>
-            <p id="laps">nothing laped at the moment</p>
+            <p id="laps">nothing lapped at the moment</p>
         </div>
 
         
