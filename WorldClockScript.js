@@ -16,7 +16,13 @@ window.onload = function () {
     let me = document.getElementById('mes');
     if (local.includes("AM")) {
         me.innerHTML = "Good morning";
-    } else {
+    }else if(Integer.parseInt(local.charAt(0)) == 12){
+        me.innerHTML = "Good its noon. enjoy your lunch/tea";
+    
+    }else if(Integer.parseInt(local.charAt(0)) >= 1 && Integer.parseInt(local.charAt(0)) <= 5 ){
+        me.innerHTML = "good afternoon";
+    } 
+    else {
         me.innerHTML = "good evening";
     }
     c3.innerHTML = "Clock: " + local;
@@ -24,10 +30,15 @@ window.onload = function () {
 
 }
 function getTime() {
-    let me = document.getElementById('mes')
+    let me = document.getElementById('mes');
     let c3 = document.getElementById('localTime');
     if (local.includes("AM")) {
         me.innerHTML = "Good morning";
+    }else if(Integer.parseInt(local.charAt(0)) == 12){
+        me.innerHTML = "Good its noon. enjoy your lunch/tea";
+    
+    }else if(Integer.parseInt(local.charAt(0)) >= 1 && Integer.parseInt(local.charAt(0)) <= 5 ){
+        me.innerHTML = "good afternoon";
     } else {
         me.innerHTML = "good evening";
     }
