@@ -1,7 +1,7 @@
 var local = new Date().toLocaleTimeString();
 
 window.onload = function () {
-    let daysOfweek = ['friday', 'saturday', 'sunday', 'monday', 'tuesday', 'wedsenday', 'thursday'];
+    let daysOfweek = ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wedsenday', 'Thursday'];
     let c = document.getElementById("test");
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -11,7 +11,7 @@ window.onload = function () {
     let c3 = document.getElementById('localTime');
     let t = new Date(mm, dd, yyyy);
     c.innerHTML = "today date: " + mm + '/' + dd + '/' + yyyy;
-    c2.innerHTML = "we hope your having a good " + daysOfweek[t.getDay() - 1] + "!";
+    c2.innerHTML = "we hope your having a good " + daysOfweek[t.getDay()] + "!";
     setInterval(getTime, 1000);
     let me = document.getElementById('mes');
     if (local.includes("AM")) {

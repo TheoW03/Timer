@@ -9,6 +9,11 @@ var laps=[];
 var lapIndex = 0;
 
 function start(){
+    document.getElementById("starts").disabled = true;
+    document.getElementById("stops").disabled = false;
+    document.getElementById("Laps").disabled = false;
+
+
     if(pressedLap){
         let c = document.getElementById('timer');
         c.innerHTML="00:00:00:00"
@@ -17,10 +22,14 @@ function start(){
         mins=0;
         hours=0;
         pressedLap=false;
+        document.getElementById("Laps").disabled = false;
     }
     paused=false;
 }
 function stop(){
+    document.getElementById("starts").disabled = false;
+    document.getElementById("Laps").disabled = true;
+    document.getElementById("stops").disabled = true;
     paused=true;
 }
 
@@ -85,13 +94,18 @@ function lap(){
     let lapWeb= laps.map(x => x + t);
     c.innerHTML = lapWeb.toString().split(',').join('<br>');
     lapIndex++;
+    document.getElementById("Laps").disabled = true;
+    pressedLap = true;
     stop();
+
 }
 /**
  * reset event
  */
 function resetT(){
     let c = document.getElementById('timer');
+    document.getElementById("starts").disabled = false;
+
     c.innerHTML="00:00:00:00"
     miliSeconds=0;
     secs=0;
