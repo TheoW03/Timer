@@ -16,15 +16,18 @@ window.onload = function () {
     let me = document.getElementById('mes');
     if (local.includes("AM")) {
         me.innerHTML = "Good morning";
-    }else if(Integer.parseInt(local.charAt(0)) == 12){
-        me.innerHTML = "Good its noon. enjoy your lunch/tea";
-    
-    }else if(Integer.parseInt(local.charAt(0)) >= 1 && Integer.parseInt(local.charAt(0)) <= 5 ){
-        me.innerHTML = "good afternoon";
-    } 
-    else {
-        me.innerHTML = "good evening";
+    }else if(local.includes('PM')){
+        me.innerHTML = "Have a good evening/afternoon";
     }
+    //else if(Integer.parseInt(local.charAt(0)) == 12){
+    //     me.innerHTML = "Good its noon. enjoy your lunch/tea";
+    
+    // }else if(Integer.parseInt(local.charAt(0)) >= 1 && Integer.parseInt(local.charAt(0)) <= 5 ){
+    //     me.innerHTML = "good afternoon";
+    // } 
+    // else {
+    //     me.innerHTML = "good evening";
+    // }
     c3.innerHTML = "Clock: " + local;
 
 
@@ -34,14 +37,17 @@ function getTime() {
     let c3 = document.getElementById('localTime');
     if (local.includes("AM")) {
         me.innerHTML = "Good morning";
-    }else if(Integer.parseInt(local.charAt(0)) == 12){
-        me.innerHTML = "Good its noon. enjoy your lunch/tea";
+    }else if(local.includes('PM')){
+        me.innerHTML = "Have a good evening/afternoon";
+    } 
+    //else if(Integer.parseInt(local.charAt(0)) == 12){
+    //     me.innerHTML = "Good its noon. enjoy your lunch/tea";
     
-    }else if(Integer.parseInt(local.charAt(0)) >= 1 && Integer.parseInt(local.charAt(0)) <= 5 ){
-        me.innerHTML = "good afternoon";
-    } else {
-        me.innerHTML = "good evening";
-    }
+    // }else if(Integer.parseInt(local.charAt(0)) >= 1 && Integer.parseInt(local.charAt(0)) <= 5 ){
+    //     me.innerHTML = "good afternoon";
+    // } else {
+    //     me.innerHTML = "good evening";
+    // }
 
     local = "Clock: " + new Date().toLocaleTimeString();
     c3.innerHTML = local;
