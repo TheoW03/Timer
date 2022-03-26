@@ -1,4 +1,4 @@
-// import {timerr} from "./TimerClass.js";
+ // import {timerr} from "./TimerClass.js";
 
 var paused = true;
 var secs;

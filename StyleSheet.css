@@ -1,32 +1,102 @@
-.navBar{
-    background-color: blue;
+.navBar {
+    background-color: grey;
     height: 60px;
 }
-#divButton{
+
+#divButton {
     color: white;
     border: none;
-    background-color: blue;
+    background-color: grey;
     height: 60px;
     width: 90px;
     font-weight: bold;
     font-family: sans-serif;
 
 }
-#divButton:hover{
-    background-color: rgb(14,4,191);
+
+#divButton:hover {
+    background-color: rgb(140, 140, 140);
 }
-.stopsWatchcontainer{
+
+.stopsWatchcontainer {
     position: relative;
     justify-content: center;
     text-align: center;
+    font-size: 40px;
     height: 200px;
+    font-family: sans-serif;
 }
-.timerContainer{
+
+#starts {
+    width: 90px;
+    background-color: green;
+    border-style: none;
+    font-size: 18px;
+    color: white;
+    height: 60px;
+    
+}
+#starts:disabled,
+#starts[disabled]{
+  border: 1px solid #65a17d;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+#stops {
+    background-color: red;
+    border-style: none;
+    font-size: 18px;
+    color:white;
+    width: 90px;
+    height: 60px;
+
+}
+#stops:disabled,
+#stops[disabled]{
+  border: 1px solid #999999;
+  background-color: #cea8a8;
+  color: #666666;
+}
+
+
+#Laps {
+    width: 90px;
+    font-size: 18px;
+    border-style: none;
+    height: 60px;
+    background-color: orange;
+    color:white;
+
+}
+#Laps:disabled,
+#Laps[disabled]{
+    border: 1px solid #999999;
+    background-color: rgb(168, 109, 0);
+    color: #666666;
+}
+#reset {
+    width: 90px;
+    border-style: none;
+    font-size: 18px;
+    background-color:dimgrey;
+    color:white;
+    height: 60px;
+
+}
+
+#laps {
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.timerContainer {
     position: relative;
     justify-content: center;
-    text-align: center;    
+    text-align: center;
 }
-.bottomBar{
+
+.bottomBar {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -34,17 +104,20 @@
     width: 100vw;
     height: 5vw;
     font-family: sans-serif;
-    
+
 }
-#social{
+
+#social {
     height: 4vw;
     border-style: none;
 
 }
-.worldClock{
+
+.worldClock {
     justify-content: center;
     text-align: center;
 }
+
 /* .timeCon{
     position: relative;
     float: left;
