@@ -1,6 +1,6 @@
 .navBar {
     background-color: grey;
-    height: 60px;
+    height: 65px;
 }
 
 #divButton {
@@ -17,7 +17,18 @@
 #divButton:hover {
     background-color: rgb(140, 140, 140);
 }
-
+#backButon{
+    color: white;
+    border: none;
+    background-color: grey;
+    height: 60px;
+    width: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#backButon:hover {
+    background-color: rgb(140, 140, 140);
+}
 .stopsWatchcontainer {
     position: relative;
     justify-content: center;
