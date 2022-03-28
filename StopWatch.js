@@ -16,13 +16,12 @@ function start() {
 
     if (pressedLap) {
         let c = document.getElementById('timer');
-        c.innerHTML = "00:00:00:00"
+        c.innerHTML = "00:00:00:00";
         miliSeconds = 0;
         secs = 0;
         mins = 0;
         hours = 0;
         pressedLap = false;
-        document.getElementById("Laps").disabled = false;
     }
     paused = false;
 
@@ -36,50 +35,41 @@ function stop() {
 
 /**
  * 
- * @returns returns nothing
+ * @param {timerNum} num this is the number you want to attach 0 too 
+ * @returns 1 = 01|10 = 10
+ */
+ function addZero(num){
+    if(num < 10){
+        return "0"+num.toString();
+    }else{
+        return num.toString();
+    }
+}
+/**
  * 
+ * sets HTML
  */
 function stopWatch() {
     if (!paused) {
         //checks time if needs to be 0
-        if (miliSeconds == 10) {
+        if (miliSeconds >= 10) {
             miliSeconds = 0;
             secs++;
         }
-        if (secs == 60) {
+        if (secs >= 60) {
             secs = 0;
             mins++;
         }
-        if (mins == 60) {
+        if (mins >= 60) {
             mins = 0;
             hours++;
         }
-        //string
-        let SecsString = "";
-        if (secs < 10) {
-            SecsString += "0";
-        }
-        let minsString = "";
-        if (mins < 10) {
-            minsString += "0";
-        }
-        let hoursString = "";
-        if (hours < 10) {
-            hoursString += "0";
-        }
-        //adding to Srting
-        hoursString += hours.toString();
-        SecsString += secs.toString();
-        minsString += mins.toString();
-        //implementation on webseite
-        let t = hoursString + ":" + minsString + ":" + SecsString + ":0" + miliSeconds.toString();
-        let c = document.getElementById('timer');
-        c.innerHTML = t;
+        //website
+        let t = addZero(hours) + ":" + addZero(mins) + ":" + addZero(secs) + ":" + addZero(miliSeconds);
+        document.getElementById('timer').innerHTML = t;
         Lap = t;
         miliSeconds++;
-    } else {
-        return;
-    }
+    } 
 }
 
 /**
@@ -106,8 +96,8 @@ function lap() {
 function resetT() {
     let c = document.getElementById('timer');
     document.getElementById("starts").disabled = false;
-    document.getElementById("Laps").disabled = true;
-    document.getElementById("stops").disabled = true;
+    document.getElementById("Laps").disabled = false;
+    document.getElementById("stops").disabled = false;
     document.getElementById('laps').innerHTML = "nothing lapped at the moment";
     laps=[];
     c.innerHTML = "00:00:00:00"
