@@ -43,8 +43,18 @@ function showPosition(position) {
     // "<br>Longitude: " + position.coords.longitude;
 }
 function setSelf(s,state){
-    cityAndPlace = s + ","+state;
+    cityAndPlace = s;
     alert(cityAndPlace)
+    Weather.getCurrent(s, function(current) {
+        alert(
+          ["currently:",current.temperature(),"and",current.conditions()].join(" ")
+        );
+      });
+      
+      Weather.getForecast(s, function(forecast) {
+        alert("forecast high: " + forecast.high());
+        alert("forecast low: " + forecast.low());
+      });
 }
 function getSe(){
     return cityAndPlace;
