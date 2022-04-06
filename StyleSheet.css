@@ -136,3 +136,37 @@
     justify-content: center;
     text-align: left;
 } */
+.google-weather-place{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+.timer{
+    position: relative;
+    justify-content: center;
+    text-align: center; 
+}
+#hours{
+    height:20px;
+}
+#mins{
+    height:20px;
+}
+#seconds{
+    height:20px;
+}
+#timerL{
+    font-size: 30px;
+    font-family: sans-serif;
+}
+#startTimer{
+    height: 50px;
+    background-color:green;
+    color:white;
+
+}
+#stopTimer{
+    height: 50px;
+    background-color:red;
+    color:white;
+}

@@ -15,6 +15,9 @@
 //     showNotification();
 
 // }
+window.onload = function(){
+    document.getElementById("stopSound").hidden=true;
+}
 var paused = true;
 var secs;
 var hours;
@@ -100,7 +103,8 @@ function timer() {
             // showNotification();
             const soundEffect = new Audio();
             soundEffect.src = 'timerUp.mp3';
-            soundEffect.play();
+            // soundEffect.play();
+            document.getElementById("stopSound").hidden=false;
             paused = true;
         }
 
@@ -113,5 +117,9 @@ function timer() {
         secsId.disabled = false;
         return;
     }
+}
+function stopSound(){
+    document.getElementById("stopSound").hidden=true;
+
 }
 var id = setInterval(timer, 1000);
