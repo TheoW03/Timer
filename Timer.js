@@ -46,6 +46,7 @@ function startTimers() {
         minsId = document.getElementById("mins");
         secsId = document.getElementById("seconds");
         hours = hoursId.value;
+        // hoursId.disabled = false;
         if (hours == null || hours < 0) {
             hours = 0;
         }
@@ -85,6 +86,7 @@ function stopT() {
     paused = true;
 }
 var zeroedOut = false;
+//helper function. if n < 10 -> 0
 function addZero(num) {
     if (num < 10) {
         return "0" + num.toString();
@@ -92,8 +94,9 @@ function addZero(num) {
         return num.toString();
     }
 }
-
+// main timer function
 function timer() {
+    //if unpaused
     if (!paused) {
         hoursId.disabled = true;
         minsId.disabled = true;
@@ -120,6 +123,7 @@ function timer() {
             hours = 0;
             mins = 0;
         }
+        //if all equals 0
         if (hours == 0 && mins == 0 && secs == 0) {
             // showNotification();
             const soundEffect = new Audio();
@@ -143,6 +147,7 @@ function timer() {
         return;
     }
 }
+//stops sound
 function stopSound() {
     document.getElementById("stopSound").hidden = true;
     soundExists=false;
@@ -151,4 +156,5 @@ function stopSound() {
     secsId.disabled = false;
 
 }
+//timer
 var id = setInterval(timer, 1000);
